@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name           = 'XMPPFramework'
   s.homepage       = 'http://www.dang5.com'
-  s.version        = '1.0.0'
+  s.version        = '0.1.0'
   s.author         = { 'Robbie Hanson' => 'robbiehanson@deusty.com' }
   s.license        = { :type => 'BSD', :file => 'copying.txt' }
   s.summary        = 'An XMPP Framework in Objective-C for Mac and iOS'
@@ -19,7 +19,7 @@ Pod::Spec.new do |s|
     12-core Mac Pro. (And it won't block the main thread... at all)
   DESC
 
-  s.source         = { :git => 'https://github.com/songlin/XMPPFramework', :tag => '1.0' }
+  s.source         = { :git => 'https://github.com/songlin/XMPPFramework', :tag => '0.1.0' }
   s.source_files   = 'Core', 'Categories', 'Utilities', 'Authentication/**/*.{h,m}'
   s.requires_arc   = true
 
