@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'XMPPFramework'
-  s.version = '0.1.0'
+  s.version = '0.1.1'
   s.license = { :type => 'BSD', :file => 'copying.txt' }
   s.summary = 'An XMPP Framework in Objective-C for the Mac / iOS development community.'
   s.homepage = 'https://github.com/robbiehanson/XMPPFramework'
