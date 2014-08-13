@@ -413,7 +413,7 @@ static XMPPMessageArchivingCoreDataStorage *sharedInstance;
 			NSDate *timestamp = [message delayedDeliveryDate];
 			if (timestamp) {
 				// songlin: offline message time diff
-				NSTimeInterval diff = [self.xmppStream xmppAutoTime_timeDifferenceForTargetJID:nil];
+				NSTimeInterval diff = [xmppStream xmppAutoTime_timeDifferenceForTargetJID:nil];
 				archivedMessage.timestamp = [timestamp dateByAddingTimeInterval:-diff];
 			}
 			else
