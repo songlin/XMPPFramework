@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name           = 'XMPPFramework'
   s.homepage       = 'http://www.dang5.com'
-  s.version        = 'master
+  s.version        = 'master'
   s.author         = { 'Robbie Hanson' => 'robbiehanson@deusty.com' }
   s.license        = { :type => 'BSD', :file => 'copying.txt' }
   s.summary        = 'An XMPP Framework in Objective-C for Mac and iOS'
