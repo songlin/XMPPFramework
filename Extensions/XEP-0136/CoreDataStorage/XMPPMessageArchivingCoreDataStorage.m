@@ -3,6 +3,7 @@
 #import "XMPPLogging.h"
 #import "NSXMLElement+XEP_0203.h"
 #import "XMPPMessage+XEP_0085.h"
+#import "XMPPAutoTime.h"
 
 #if ! __has_feature(objc_arc)
 #warning This file must be compiled with ARC. Use -fobjc-arc flag (or convert project to ARC).
@@ -410,8 +411,11 @@ static XMPPMessageArchivingCoreDataStorage *sharedInstance;
 			archivedMessage.streamBareJidStr = [myJid bare];
 			
 			NSDate *timestamp = [message delayedDeliveryDate];
-			if (timestamp)
-				archivedMessage.timestamp = timestamp;
+			if (timestamp) {
+				// songlin: offline message time diff
+				NSTimeInterval diff = [self.xmppStream xmppAutoTime_timeDifferenceForTargetJID:nil];
+				archivedMessage.timestamp = [timestamp dateByAddingTimeInterval:-diff];
+			}
 			else
 				archivedMessage.timestamp = [[NSDate alloc] init];
 			
