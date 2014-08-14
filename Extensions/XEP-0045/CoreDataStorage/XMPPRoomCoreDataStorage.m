@@ -604,7 +604,10 @@ static XMPPRoomCoreDataStorage *sharedInstance;
 	{
 		remoteTimestamp = [message delayedDeliveryDate];
 		if (remoteTimestamp) {
-			localTimestamp = remoteTimestamp;
+			// songlin: offline message time diff
+			NSTimeInterval diff = [xmppStream xmppAutoTime_timeDifferenceForTargetJID:nil];
+			localTimestamp = [remoteTimestamp dateByAddingTimeInterval:-diff];
+			//localTimestamp = remoteTimestamp;
 		}
 		else {
 			localTimestamp = [[NSDate alloc] init];
